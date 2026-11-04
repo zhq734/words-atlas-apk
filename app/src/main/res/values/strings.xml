@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">词光</string>
+    <string name="offline_title">无法连接网络</string>
+    <string name="offline_message">词库已内置，可离线查词；插画与发音需要联网。</string>
+    <string name="retry">重试</string>
+</resources>

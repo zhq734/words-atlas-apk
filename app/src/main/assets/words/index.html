@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0D1120" />
+    <meta name="twitter:title" content="词光 · 雅思词汇图鉴" />
+    <meta name="twitter:image" content="https://0xlei.tech/words/brand/og-card.jpg" />
+    <title>词光 Word Atlas · 雅思词汇图鉴</title>
+    <meta name="description" content="用插画、例句和英美发音学习雅思词汇，按作答情况安排复习。免费使用，无需注册。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="词光 · 雅思词汇图鉴" />
+    <meta property="og:description" content="一词一画，学在语境里。配例句、英美发音和复习安排。免费使用，无需注册。" />
+    <meta property="og:image" content="https://0xlei.tech/words/brand/og-card.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/words/favicon.svg" />
+    <link rel="apple-touch-icon" href="/words/icon-512.png" />
+    <link rel="manifest" href="/words/manifest.webmanifest" />
+    <link rel="preload" href="/words/atlas/index.json" as="fetch" crossorigin="anonymous" />
+    <script>
+      // Apply the saved theme (星光 + 无衬线 by default) before first paint.
+      (function () {
+        var t = "starlight";
+        var f = "sans";
+        try {
+          var s = JSON.parse(localStorage.getItem("word-atlas:settings") || "{}");
+          if (s.theme) t = s.theme;
+          if (s.wordFont === "serif" || s.wordFont === "sans" || s.wordFont === "classic") f = s.wordFont;
+        } catch (e) {}
+        document.documentElement.setAttribute("data-font", f);
+        var skin = t === "aurora" || t === "starlight";
+        if (skin) document.documentElement.setAttribute("data-skin", t);
+        if (t !== "system") document.documentElement.setAttribute("data-theme", skin ? "dark" : t);
+      })();
+    </script>
+    <script type="module" crossorigin src="/words/assets/index-B1QTpHsH.js"></script>
+    <link rel="stylesheet" crossorigin href="/words/assets/index-BOcnajCI.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"9f50921f2b5344a297ff0ff99924721e","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

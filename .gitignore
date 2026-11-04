@@ -1,0 +1,18 @@
+# 构建产物
+.gradle/
+build/
+*/build/
+local.properties
+
+# 本地 Gradle 分发（约 145MB，不入库；构建时用系统 gradle 或自行下载）
+tools/gradle/
+
+# 安装包与签名
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# 系统文件
+.DS_Store
+Thumbs.db
