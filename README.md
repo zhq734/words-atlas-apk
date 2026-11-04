@@ -1,5 +1,7 @@
 # 词光 Word Atlas · 安卓原生版
 
+[![Build APK](https://github.com/zhq734/words-atlas-apk/actions/workflows/build.yml/badge.svg)](https://github.com/zhq734/words-atlas-apk/actions/workflows/build.yml)
+
 把 [0xlei.tech/words](https://0xlei.tech/words/)（词光 · 雅思词汇图鉴）做成的**原生 Android 应用**：界面完全用 Android 控件实现，直接消费官网的静态数据与媒体资源，而不是套一层 WebView。
 
 ## 功能
@@ -65,11 +67,23 @@ build.sh                          一键构建 debug 包
 
 前置：JDK 17、Android SDK（platform 35 / build-tools 35.0.0）。
 
-仓库不包含本地 Gradle 分发（约 145 MB）：首次构建前请把 `gradle-8.11.1` 解压到 `tools/gradle/`，或改用系统安装的 Gradle 8.x。
+仓库自带 Gradle Wrapper，克隆后直接构建：
 
 ```bash
-./build.sh                      # debug 包
-./tools/gradle/gradle-8.11.1/bin/gradle :app:assembleRelease   # release 包
+./gradlew :app:assembleRelease   # release 包（debug 签名，可直接安装）
+./gradlew :app:assembleDebug     # debug 包
+./build.sh                       # debug 包（使用 tools/gradle 本地分发）
+```
+
+`build.sh` 依赖的本地 Gradle 分发（约 145 MB）不在仓库内，需要时把 `gradle-8.11.1` 解压到 `tools/gradle/`。
+
+## 持续集成
+
+`.github/workflows/build.yml` 在推送到 `main`、提交 PR 和手动触发时，用 JDK 17 构建 release 与 debug 两个 APK，并以 `word-atlas-apk` 制品上传，可在 Actions 运行页下载；推送 `v*` 标签时还会额外创建 GitHub Release 并附上 APK。
+
+```bash
+gh workflow run build.yml                  # 手动触发
+git tag v2.0.7 && git push origin v2.0.7   # 打标签发版
 ```
 
 产物：
